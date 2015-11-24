@@ -54,9 +54,17 @@ end
 
  post '/getlinks' do
 
-      @this_page = params[:links][0].to_s
+        @this_page = params[:links].values[0].to_s
+       
+      def get_links(newpage)
+    #Go to specified URL, scrape links/descriptions for new URLs
+   #just use mechanize
+      #exclude facebook pages
+
+      # pages.each do |pg| 
+      #  begin
        mech = Mechanize.new 
-       page = mech.get(@this_page)
+       page = mech.get(newpage)
         # # rescue Mechanize::ResponseCodeError => exception
         # #   if exception.response_code == '404'
         # rescue Mechanize::ResponseCodeError => e
@@ -69,11 +77,13 @@ end
           # end #end page links
         #@links = page.links
         #end #end rescue
-        page.links.each do |link| link.href.to_s.include? newpage ? "skip" : ($links << "#{link.text}, #{link.href}")
+        page.links.each do |link| $links << "#{link.text}, #{link.href}"
+        end
         #end #end pages each
         # end
       end #end get_links
     
+    get_links(@this_page)
       redirect :link_results
   end #end post /links
 
