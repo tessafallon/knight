@@ -7,4 +7,5 @@ gem 'nokogiri'
 gem 'metainspector'
 gem 'mechanize'
 gem 'screencap'
+gem 'link_thumbnailer'
 

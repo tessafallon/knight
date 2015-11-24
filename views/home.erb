@@ -6,9 +6,16 @@
 
 <div class="row">
         <div class="span4">
-          <h2>Find websites</h2>
-          <p>Search for websites by keywords</p>
-          <p><a class="btn" href="/scrape">View details &raquo;</a></p>
+          <h2>Nominate a site</h2>
+          <p>Search for websites by URL</p>
+          <h2>Find this URL</h2>
+          <div class="well col-md-3">
+<form action="/nominate" method="POST">
+  <input type="text" name="noms[nom1]" />
+  <button type="submit">Submit</button>
+</form>
+</div>
+          <p><a class="btn" href="/nominate">View details &raquo;</a></p>
         </div>
         <div class="span4">
           <h2>Find links</h2>
@@ -16,8 +23,8 @@
           <p><a class="btn" href="/getlinks">View details &raquo;</a></p>
        </div>
         <div class="span4">
-          <h2>Archive a page</h2>
-          <p>Request archiving for a specific URL and/or article</p>
+          <h2>Search Archive</h2>
+          <p>Search previously archived material</p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
       </div>

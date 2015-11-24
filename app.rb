@@ -25,6 +25,8 @@ $add_em = []
 $links = []
 $matches = []
 $selected_sites = []
+$user_url = []
+$url_thumbnail = []
 
 class App < Sinatra::Base
  
@@ -33,6 +35,23 @@ class App < Sinatra::Base
 get "/" do
   erb :home
 end
+
+get "/nominate" do
+    #variable = words
+    
+    erb :nominate
+  end
+
+  post "/nominate" do
+    $user_url << params[:noms].values[0].to_s
+    p $user_url
+    #$url_thumbnail = LinkThumbnailer.generate("#{$user_url}")
+    redirect "/holder"
+  end
+
+  get '/holder' do
+    erb :holder
+  end
 
   get "/scrape" do
     #variable = words
