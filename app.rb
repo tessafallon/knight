@@ -44,9 +44,8 @@ get "/nominate" do
 
   post "/nominate" do
     $user_url << params[:noms].values[0].to_s
-    p $user_url
     #$url_thumbnail = LinkThumbnailer.generate("#{$user_url}")
-    redirect "/holder"
+    redirect "/nominate"
   end
 
   get '/holder' do

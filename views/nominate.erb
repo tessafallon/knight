@@ -1,8 +1,9 @@
 <h1>Nominate this site</h1>
 
-<form action="/nominate" method="POST">
-  <input type="text" name="noms[nom1]" />
-  <button type="submit">Submit</button>
-</form>
 
 
+
+<%  f = Screencap::Fetcher.new($user_url[0].to_s) %>
+<%  screenshot = f.fetch(:output => 'public/img/img3.png')%>
+
+<img src = "img/img3.png" />
