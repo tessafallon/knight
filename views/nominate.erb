@@ -1,9 +1,23 @@
-<h1>Nominate this site</h1>
+<h1>Nominate this page</h1>
+<h2>Showing screenshot for <%= $user_url[0]%></h2>
 
+<div class="well col-md-3">
+<form action "/submiturl" method="POST">
+  <ul>
+      <li><input type="checkbox" name="sites[]" value = "0"> Text</li>
+      <li><input type="checkbox" name="sites[]" value = "1"> Images</li>
+      <li><input type="checkbox" name="sites[]" value = "2"> Video</li>
+      <li><input type="checkbox" name="sites[]" value = "3"> Entire page</li>
+      <li><input type="checkbox" name="sites[]" value = "4"> Entire article</li>
+  <ul>
+    <br>
+<button type="submit">Submit</button>
+  </form>
+</div>
 
 
 
 <%  f = Screencap::Fetcher.new($user_url[0].to_s) %>
 <%  screenshot = f.fetch(:output => 'public/img/img3.png')%>
 
-<img src = "img/img3.png" />
+<img src = "img/img3.png" class ='img-responsive' border="2"/>
