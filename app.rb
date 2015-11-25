@@ -38,14 +38,19 @@ get "/nominate" do
   end
 
   post "/nominate" do
-    $user_url << params[:noms].values[0].to_s
+    #$user_url << params[:noms].values[0].to_s
     #$url_thumbnail = LinkThumbnailer.generate("#{$user_url}")
     redirect "/nominate"
   end
 
+  
   post '/submiturl' do
-    redirect "/thanks"
+    redirect '/thanks'
   end
+
+get '/thanks' do
+  erb :thanks
+end
 
   get '/holder' do
     erb :holder
@@ -88,7 +93,7 @@ end
       end #end get_links
     
     get_links(@this_page)
-      redirect :link_results
+      redirect '/link_results'
   end #end post /links
 
   #redirect '/link_results'
