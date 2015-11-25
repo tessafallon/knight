@@ -10,13 +10,16 @@
           <h4>Find this URL</h4>
             <form action="/nominate" method="POST">
               <input type="text" name="noms[nom1]" />
-              <button type="submit">Submit</button>
+              <button type="submit">Check URL!</button>
             </form>
         </div>
         <div class="span4">
           <h2>Find links</h2>
-          <p>Find related links from selected websites</p>
-          <p><a class="btn" href="/getlinks">Find links! &raquo;</a></p>
+          <p>Find related links from a selected website</p>
+            <form action="/getlinks" method="POST">
+              <input type="text" name="links[link1]"/>
+              <button type="submit">Find links!</button>
+          </form>
        </div>
         <div class="span4">
           <h2>Search Archive</h2>

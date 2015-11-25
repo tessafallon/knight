@@ -60,7 +60,7 @@ end
 
   
 get '/getlinks' do
-    erb :getlinks
+    erb :link_results
 end
 
  post '/getlinks' do
@@ -95,7 +95,7 @@ end
       end #end get_links
     
     get_links(@this_page)
-      redirect '/link_results'
+      redirect '/getlinks'
   end #end post /links
 
   #redirect '/link_results'
