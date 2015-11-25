@@ -102,8 +102,9 @@ end
 # end
 
 get '/newsearch' do
-  File.delete('public/image.png')
+  File.delete('public/image.png') if File.exist?('public/image.png')
   $user_url = []
+  $links = []
   redirect '/'
 end
 
