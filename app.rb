@@ -101,6 +101,12 @@ end
   #redirect '/link_results'
 # end
 
+get '/newsearch' do
+  File.delete('public/image.png')
+  $user_url = []
+  redirect '/'
+end
+
   get '/link_results' do
     erb :link_results
   end
