@@ -15,17 +15,16 @@
   </form>
 </div>
 
-
-
-<%  f = Screencap::Fetcher.new($user_url[0].to_s) %>
+<% f = Screencap::Fetcher.new($user_url[0].to_s) %>
 
 <% @killit = $user_url[0].delete('.') %>
 <% @dead = @killit.gsub('/',"") %>
 <% @argh = @dead.delete(':') %>
 <% @use = File.join('', @argh) %>
-<% @use << '.png' %>
-<p><img src= '<%= @use%>' /></p>
+<% screenshot = f.fetch(:output => 'public/image.png')%>
 
-<% screenshot = f.fetch(:output => @use )%>
+<p><img src= '/image.png' /></p>
+
+
 
 
