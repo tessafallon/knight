@@ -1,19 +1,25 @@
-<h1>Nominate this page</h1>
-<h2>Showing screenshot for <%= $user_url[0]%></h2>
+<h1>Nominate This Page</h1>
 
-<div class="well col-md-3">
+<div class = "row">
+<div class="col-md-4">
+<label>Items to Archive:</label>
 <form action="/submiturl" method="POST">
-  <ul>
+  
       <li><input type="checkbox" name="sites[]" value = "0"> Text</li>
       <li><input type="checkbox" name="sites[]" value = "1"> Images</li>
       <li><input type="checkbox" name="sites[]" value = "2"> Video</li>
       <li><input type="checkbox" name="sites[]" value = "3"> Entire page</li>
       <li><input type="checkbox" name="sites[]" value = "4"> Entire article</li>
-  <ul>
-    <br>
-<button type="submit">Submit</button>
+ <br>
+ <button type="submit">Submit</button>
+ </div>
+ <div class="col-md-4">
+  <label for="comment">Comments:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
   </form>
 </div>
+<h3>Showing screenshot for <%= $user_url[0]%></h3>
 
 <% f = Screencap::Fetcher.new($user_url[0].to_s) %>
 
