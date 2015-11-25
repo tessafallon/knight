@@ -18,7 +18,12 @@
 
 
 <%  f = Screencap::Fetcher.new($user_url[0].to_s) %>
-<%  @screenshot = f.fetch(:output => 'public/img/#{$user_url}.png')%>
-<% p @screenshot %>
 
-<img src = '<%= @screenshot %>' class ='img-responsive' border="2"/>
+<% @killit = $user_url[0].delete('.') %>
+<% @dead = @killit.gsub('/',"") %>
+<% @argh = @dead.delete(':') %>
+<% @use = File.join('', @argh) %>
+<% @use << '.png' %>
+<p><img src= '<%= @use%>' /></p>
+
+<% screenshot = f.fetch(:output => @use )%>

@@ -15,6 +15,9 @@ require 'open-uri'
 require 'csv'
 require 'bundler'
 
+APP_ROOT = File.dirname(__FILE__)
+
+
 $exclude = []
 $urls = []
 $add_em = []
@@ -38,8 +41,8 @@ get "/nominate" do
   end
 
   post "/nominate" do
-    #$user_url << params[:noms].values[0].to_s
-    #$url_thumbnail = LinkThumbnailer.generate("#{$user_url}")
+    $user_url << params[:noms].values[0].to_s
+    p $user_url
     redirect "/nominate"
   end
 
