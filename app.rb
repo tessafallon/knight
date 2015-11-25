@@ -34,9 +34,7 @@ get "/" do
   erb :home
 end
 
-get "/nominate" do
-    #variable = words
-    
+get "/nominate" do    
     erb :nominate
   end
 
