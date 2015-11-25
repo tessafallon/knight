@@ -18,6 +18,7 @@
 
 
 <%  f = Screencap::Fetcher.new($user_url[0].to_s) %>
-<%  screenshot = f.fetch(:output => 'public/img/img3.png')%>
+<%  @screenshot = f.fetch(:output => 'public/img/#{$user_url}.png')%>
+<% p @screenshot %>
 
-<img src = "img/img3.png" class ='img-responsive' border="2"/>
+<img src = '<%= @screenshot %>' class ='img-responsive' border="2"/>
