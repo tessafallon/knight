@@ -43,6 +43,10 @@ get "/nominate" do
     redirect "/nominate"
   end
 
+  post '/submiturl' do
+    redirect "/thanks"
+  end
+
   get '/holder' do
     erb :holder
   end
